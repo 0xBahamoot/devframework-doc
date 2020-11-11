@@ -49,11 +49,37 @@ if err!=nil {
 
 ## Stake
 
-API_CreateAndSendStakingTransaction(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, stakeInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+API_SendTxStaking(stake StakingParam) (jsonresult.CreateTransactionResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendStakingTransaction()
-if err!=nil {
+type StakingTxParam struct {
+	CommitteeKey *incognitokey.CommitteePublicKey
+	BurnAddr     string
+	StakerPrk    string
+	MinerPrk     string
+	RewardAddr   string
+	StakeShard   bool
+	AutoRestake  bool
+	Name         string
+}
+```
+
+```go title="Example: we use Genesis Account PRV to stake for Account1(miner1) and reward will go to Account1"
+Account1 := sim.NewAccountFromShard(0)
+committeeKey1, _ := account.BuildCommitteePubkey(Account1.PrivateKey, sim.GenesisAccount.PaymentAddress)
+stake1 := rpcclient.StakingTxParam{
+    Name:         "miner1",
+    CommitteeKey: committeeKey1,
+    BurnAddr:     sim.GetBlockchain().GetBurningAddress(sim.GetBlockchain().BeaconChain.GetFinalViewHeight()),
+    StakerPrk:    sim.GenesisAccount.PrivateKey,
+    MinerPrk:     Account1.PrivateKey,
+    RewardAddr:   Account1.PaymentAddress,
+    StakeShard:   true,
+    AutoRestake:  true,
+}
+
+result, err = sim.RPC.API_SendTxStaking(stake1)
+if err != nil {
     return err
 }
 ```
@@ -64,9 +90,21 @@ if err!=nil {
 
 API_CreateAndSendStopAutoStakingTransaction(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, stopStakeInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error) -->
 
+
 ```go
-beststate, err := sim.RPC.API_CreateAndSendStopAutoStakingTransaction()
-if err!=nil {
-    return err
+type StopStakingParam struct {
+	BurnAddr  string
+	StakerPrk string
+	MinerPrk  string
+}
+```
+```go title="Example: request stop auto-staking for Account1"
+unstake1 := rpcclient.StopStakingParam{
+    BurnAddr:  sim.GetBlockchain().GetBurningAddress(sim.GetBlockchain().BeaconChain.GetFinalViewHeight()),
+    StakerPrk: sim.GenesisAccount.PrivateKey,
+    MinerPrk:  Account1.PrivateKey,
+}
+if _, err := sim.RPC.API_SendTxStopAutoStake(unstake1); err != nil {
+    panic(err)
 }
 ```

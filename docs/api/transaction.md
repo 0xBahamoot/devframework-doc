@@ -30,19 +30,24 @@ Make sure you are sending from account that have PRV.
 ---
 
 ## pToken Transaction
-
-API_CreateAndSendPrivacyCustomTokenTransaction(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, tokenInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
-
 ### Mint ptoken
+API_SendTxCreateCustomToken(privateKey string, receiverPaymentAddress string, privacy float64, tokenName string, tokenSymbol string, tokenAmount uint64) (*jsonresult.CreateTransactionTokenResult, error)
 
-```go title="Example: mint 1000000 pTest for Genesis Account"
-xxx
+```go title="Example: mint 30000000000 pTest for Genesis Account"
+result, err := sim.RPC.API_SendTxCreateCustomToken(sim.GenesisAccount.PrivateKey, sim.GenesisAccount.PaymentAddress, 1, "pTest", "TES", 30000000000)
+if err != nil {
+    panic(err)
+}
 ```
 
 ### Send pToken
+API_SendTxCustomToken(privateKey string, tokenID string, receivers map[string]interface{}, fee float64, privacy float64) (*jsonresult.CreateTransactionTokenResult, error)
 
-```go title="Example: sending 1000 pTest from Genesis Account to account2"
-tx, err := sim.RPC.API_CreateAndSendPrivacyCustomTokenTransaction(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, tokenInfo map[string]interface{}, p1 string, pPrivacy float64)
+```go title="Example: sending 100000 pTest from Genesis Account to account1"
+account1 := sim.NewAccount()
+tx, err := sim.RPC.API_SendTxCustomToken(sim.GenesisAccount.PrivateKey, result1.TokenID, map[string]interface{}{
+    account1.PaymentAddress: float64(100000),
+}, -1, 1)
 if err != nil {
     return err
 }

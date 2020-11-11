@@ -17,6 +17,7 @@ if err!=nil {
 
 ---
 
+<!-- TODO -->
 <!--
 API_CreateAndSendTxWithPDEFeeWithdrawalReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
 
@@ -24,10 +25,10 @@ API_CreateAndSendTxWithPDEFeeWithdrawalReq(privateKey string, receivers map[stri
 
 ## pToken Trade Request
 
-API_CreateAndSendTxWithPTokenTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
+API_SendTxWithPTokenTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendTxWithPTokenTradeReq()
+beststate, err := sim.RPC.API_SendTxWithPTokenTradeReq()
 if err!=nil {
     return err
 }
@@ -37,10 +38,10 @@ if err!=nil {
 
 ## pToken Cross-pool Trade Request
 
-API_CreateAndSendTxWithPTokenCrossPoolTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
+API_SendTxWithPTokenCrossPoolTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendTxWithPTokenCrossPoolTradeReq()
+beststate, err := sim.RPC.API_SendTxWithPTokenCrossPoolTradeReq()
 if err!=nil {
     return err
 }
@@ -50,10 +51,10 @@ if err!=nil {
 
 ## PRV Trade Request
 
-API_CreateAndSendTxWithPRVTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+API_SendTxWithPRVTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendTxWithPRVTradeReq()
+beststate, err := sim.RPC.API_SendTxWithPRVTradeReq()
 if err!=nil {
     return err
 }
@@ -63,10 +64,10 @@ if err!=nil {
 
 ## PRV Cross-pool Trade Request
 
-API_CreateAndSendTxWithPRVCrossPoolTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+API_SendTxWithPRVCrossPoolTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendTxWithPRVCrossPoolTradeReq()
+beststate, err := sim.RPC.API_SendTxWithPRVCrossPoolTradeReq()
 if err!=nil {
     return err
 }
@@ -76,10 +77,10 @@ if err!=nil {
 
 ## pToken Contribution
 
-API_CreateAndSendTxWithPTokenContributionV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
+API_SendTxWithPTokenContributionV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendTxWithPTokenContributionV2()
+beststate, err := sim.RPC.API_SendTxWithPTokenContributionV2()
 if err!=nil {
     return err
 }
@@ -89,15 +90,16 @@ if err!=nil {
 
 ## PRV Contribution
 
-API_CreateAndSendTxWithPRVContributionV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+API_SendTxWithPRVContributionV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
 
 ```go
-beststate, err := sim.RPC.API_CreateAndSendTxWithPRVContributionV2()
+beststate, err := sim.RPC.API_SendTxWithPRVContributionV2()
 if err!=nil {
     return err
 }
 ```
 
+<!-- TODO -->
 <!-- ---
 ###
 API_CreateAndSendTxWithWithdrawalReqV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error) -->
