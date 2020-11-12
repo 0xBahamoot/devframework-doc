@@ -17,7 +17,7 @@ type Config struct {
 	RoundInterval int
 }
 ```
-```go
+```go title="Example: create a simulation name 'sim' with 2 ShardChains"
 sim := devframework.NewStandaloneSimulation("sim", devframework.Config{
     ShardNumber: 2,
 })

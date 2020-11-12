@@ -30,7 +30,7 @@ Make sure you are sending from account that have PRV.
 ---
 
 ## pToken Transaction
-### Mint ptoken
+### Mint pToken
 API_SendTxCreateCustomToken(privateKey string, receiverPaymentAddress string, privacy float64, tokenName string, tokenSymbol string, tokenAmount uint64) (*jsonresult.CreateTransactionTokenResult, error)
 
 ```go title="Example: mint 30000000000 pTest for Genesis Account"

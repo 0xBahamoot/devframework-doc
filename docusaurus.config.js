@@ -16,13 +16,6 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
-        // {
-        //   to: 'docs/',
-        //   activeBasePath: 'docs',
-        //   label: 'Docs',
-        //   position: 'left',
-        // },
-        // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/incognitochain/incognito-chain',
           label: 'GitHub',
@@ -33,19 +26,6 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        // {
-        //   title: 'Docs',
-        //   items: [
-        //     {
-        //       label: 'Style Guide',
-        //       to: 'docs/',
-        //     },
-        //     {
-        //       label: 'Second Doc',
-        //       to: 'docs/doc2/',
-        //     },
-        //   ],
-        // },
         {
           title: 'Community',
           items: [
@@ -66,13 +46,13 @@ module.exports = {
         {
           title: 'More',
           items: [
-            // {
-            //   label: 'Blog',
-            //   to: 'blog',
-            // },
             {
-              label: 'GitHub',
+              label: 'Incognito GitHub',
               href: 'https://github.com/incognitochain/incognito-chain',
+            },
+            {
+              label: 'Devframework GitHub',
+              href: 'https://github.com/0xkumi/incongito-dev-framework',
             },
           ],
         },
