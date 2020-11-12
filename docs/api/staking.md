@@ -13,7 +13,7 @@ committeePubkey, err := account.BuildCommitteePubkey(minerPrivateKey, stakerPaym
 if err!=nil {
     return err
 }
-beststate, err := sim.GetCommitteePublicKeyState(committeePubkey)
+result, err := sim.GetCommitteePublicKeyState(committeePubkey)
 if err!=nil {
     return err
 }
@@ -26,7 +26,7 @@ if err!=nil {
 API_GetRewardAmount(paymentAddress string) (map[string]uint64, error)
 
 ```go
-reward, err := sim.RPC.API_GetRewardAmount(account.PaymentAddress)
+result, err := sim.RPC.API_GetRewardAmount(account.PaymentAddress)
 if err!=nil {
     return err
 }
@@ -104,7 +104,8 @@ unstake1 := rpcclient.StopStakingParam{
     StakerPrk: sim.GenesisAccount.PrivateKey,
     MinerPrk:  Account1.PrivateKey,
 }
-if _, err := sim.RPC.API_SendTxStopAutoStake(unstake1); err != nil {
-    panic(err)
+result, err := sim.RPC.API_SendTxStopAutoStake(unstake1)
+if err != nil {
+    return err
 }
 ```

@@ -10,10 +10,10 @@ module.exports = {
   themeConfig: {
     hideableSidebar: true,
     navbar: {
-      title: 'Incognito DevFramework',
+      title: 'DevFramework',
       logo: {
         alt: 'Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         // {
