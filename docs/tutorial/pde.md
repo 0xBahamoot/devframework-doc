@@ -1,4 +1,5 @@
 ---
 id: tut-pde
-title: PDE
+title: Tutorial PDE
+sidebar_label: PDE
 ---

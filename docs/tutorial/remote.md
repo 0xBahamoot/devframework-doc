@@ -1,4 +1,5 @@
 ---
 id: tut-remote
-title: Remote Client
+title: Tutorial Remote Client
+sidebar_label: Remote Client
 ---

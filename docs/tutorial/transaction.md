@@ -1,4 +1,5 @@
 ---
 id: tut-tx
-title: Transaction
+title: Tutorial Transaction
+sidebar_label: Transaction
 ---

@@ -1,4 +1,5 @@
 ---
 id: tut-stake
-title: Stake
+title: Tutorial Stake
+sidebar_label: Stake
 ---

@@ -22,7 +22,7 @@ module.exports = {
         //   label: 'Docs',
         //   position: 'left',
         // },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/incognitochain/incognito-chain',
           label: 'GitHub',
@@ -50,22 +50,26 @@ module.exports = {
           title: 'Community',
           items: [
             {
+              label:'Forum',
+              href:'https://we.incognito.org',
+            },
+            {
               label: 'Telegram',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://t.me/incognitodev',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/IncognitoChain',
             },
           ],
         },
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
+            // {
+            //   label: 'Blog',
+            //   to: 'blog',
+            // },
             {
               label: 'GitHub',
               href: 'https://github.com/incognitochain/incognito-chain',
