@@ -38,10 +38,13 @@ if err!=nil {
 
 ## pToken Cross-pool Trade Request
 
-API_SendTxWithPTokenCrossPoolTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
+API_SendTxWithPTokenCrossPoolTradeReq(acount account.Account, tokenID string, buyTokenID string, amount string) (*jsonresult.CreateTransactionTokenResult, error)
 
-```go
-beststate, err := sim.RPC.API_SendTxWithPTokenCrossPoolTradeReq()
+```go title="Example: buy PRV by selling 1000000000 pToken"
+PRVID := "0000000000000000000000000000000000000000000000000000000000000004"
+tokenToBuy := PRVID
+tokenToSell := "3fd331ddefb789ca7552f489710666bebfcd824a6ea68443054527d02acc8fa0"
+result, err := sim.RPC.API_SendTxWithPTokenCrossPoolTradeReq(sim.GenesisAccount, tokenToSell, tokenToBuy, "1000000000")
 if err!=nil {
     return err
 }
@@ -64,10 +67,12 @@ if err!=nil {
 
 ## PRV Cross-pool Trade Request
 
-API_SendTxWithPRVCrossPoolTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+API_SendTxWithPRVCrossPoolTradeReq(account account.Account, buyTokenID string, amount string) (*jsonresult.CreateTransactionResult, error)
 
-```go
-beststate, err := sim.RPC.API_SendTxWithPRVCrossPoolTradeReq()
+```go title="Example: buy pToken with 1000000 PRV"
+tokenToBuy := "3fd331ddefb789ca7552f489710666bebfcd824a6ea68443054527d02acc8fa0"
+prvSellAmount := "1000000"
+result, err := sim.RPC.API_SendTxWithPRVCrossPoolTradeReq(sim.GenesisAccount, tokenToBuy, prvSellAmount)
 if err!=nil {
     return err
 }
@@ -77,10 +82,13 @@ if err!=nil {
 
 ## pToken Contribution
 
-API_SendTxWithPTokenContributionV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
+API_SendTxWithPTokenContributionV2(account account.Account, tokenID string, tokenAmount string, pairID string) (*jsonresult.CreateTransactionTokenResult, error)
 
-```go
-beststate, err := sim.RPC.API_SendTxWithPTokenContributionV2()
+```go title="Example: contribute 300000000 pToken to testPair"
+contributeTokenID := "3fd331ddefb789ca7552f489710666bebfcd824a6ea68443054527d02acc8fa0"
+contributeAmount := "300000000"
+pairID := "testPair"
+result, err := sim.RPC.API_SendTxWithPTokenContributionV2(sim.GenesisAccount, contributeTokenID, contributeAmount, pairID)
 if err!=nil {
     return err
 }
@@ -90,10 +98,12 @@ if err!=nil {
 
 ## PRV Contribution
 
-API_SendTxWithPRVContributionV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+API_SendTxWithPRVContributionV2(account account.Account, prvAmount string, pairID string) (*jsonresult.CreateTransactionResult, error)
 
-```go
-beststate, err := sim.RPC.API_SendTxWithPRVContributionV2()
+```go title="Example: contribute 100000000000 PRV to testPair"
+contributeAmount := "100000000000"
+pairID := "testPair"
+beststate, err := sim.RPC.API_SendTxWithPRVContributionV2(sim.GenesisAccount, contributeAmount, pairID)
 if err!=nil {
     return err
 }
