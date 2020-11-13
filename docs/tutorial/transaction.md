@@ -13,8 +13,6 @@ import (
 	"incognito-dev-framework"
 	"incognito-dev-framework/account"
 	"incognito-dev-framework/rpcclient"
-	"testing"
-
 	"github.com/incognitochain/incognito-chain/blockchain"
 	"github.com/incognitochain/incognito-chain/common"
 	"github.com/incognitochain/incognito-chain/transaction"
