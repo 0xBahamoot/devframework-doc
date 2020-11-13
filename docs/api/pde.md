@@ -103,13 +103,18 @@ API_SendTxWithPRVContributionV2(account account.Account, prvAmount string, pairI
 ```go title="Example: contribute 100000000000 PRV to testPair"
 contributeAmount := "100000000000"
 pairID := "testPair"
-beststate, err := sim.RPC.API_SendTxWithPRVContributionV2(sim.GenesisAccount, contributeAmount, pairID)
+result, err := sim.RPC.API_SendTxWithPRVContributionV2(sim.GenesisAccount, contributeAmount, pairID)
 if err!=nil {
     return err
 }
 ```
 
 <!-- TODO -->
-<!-- ---
-###
-API_CreateAndSendTxWithWithdrawalReqV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error) -->
+---
+### Withdraw Liquidity
+
+API_SendTxWithWithdrawalReqV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+
+```go 
+result, err := sim.RPC.API_SendTxWithWithdrawalReqV2()
+```
