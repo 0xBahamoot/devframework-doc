@@ -3,7 +3,6 @@ id: block
 title: Block
 ---
 
-
 ```go
 sim.GenerateBlock().NextRound()
 ```
@@ -15,6 +14,7 @@ type Hook struct {
 	Insert     func(chainID int, block common.BlockInterface, doInsert func(blk common.BlockInterface) error)
 }
 ```
+
 ```go title="generate block with hook"
 sim.GenerateBlock(devframework.Hook{
     Create:     func(chainID int, doCreate func(time time.Time) (blk common.BlockInterface, err error)) {
