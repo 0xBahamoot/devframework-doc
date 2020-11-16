@@ -9,17 +9,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"incognito-dev-framework"
-	"incognito-dev-framework/account"
-    "incognito-dev-framework/rpcclient"
-	"github.com/incognitochain/incognito-chain/blockchain"
-	"github.com/incognitochain/incognito-chain/common"
-	"github.com/incognitochain/incognito-chain/transaction"
+	devframework "incognito-dev-framework"
 )
+
 func main() {
-	sim := devframework.NewStandaloneSimulation("sim", F.Config{
-        ShardNumber: 2,
-	 })
+	sim := devframework.NewStandaloneSimulation("sim", devframework.Config{
+		ShardNumber: 2,
+	})
 	sim.GenerateBlock().NextRound()
 	account1 := sim.NewAccountFromShard(0)
 	_, err := sim.RPC.API_SendTxPRV(sim.GenesisAccount.PrivateKey, map[string]interface{}{
@@ -39,7 +35,7 @@ func main() {
 		sim.GenerateBlock().NextRound()
 	}
 
-	result2, err := sim.RPC.API_SendTxWithPTokenContributionV2(sim.GenesisAccount, result1.TokenID, "300000000", "testPAIR")
+	_, err = sim.RPC.API_SendTxWithPTokenContributionV2(sim.GenesisAccount, result1.TokenID, "300000000", "testPAIR")
 	if err != nil {
 		panic(err)
 	}
@@ -56,11 +52,11 @@ func main() {
 		sim.GenerateBlock().NextRound()
 	}
 
-	result3, err := sim.RPC.API_GetPDEState(float64(sim.GetBlockchain().GetBeaconBestState().BeaconHeight))
+	result2, err := sim.RPC.API_GetPDEState(float64(sim.GetBlockchain().GetBeaconBestState().BeaconHeight))
 	if err != nil {
 		panic(err)
 	}
-	rBytes, err := json.Marshal(result4)
+	rBytes, err := json.Marshal(result2)
 	if err != nil {
 		panic(err)
 	}
@@ -87,15 +83,15 @@ func main() {
 	bl, _ := sim.RPC.API_GetBalance(sim.GenesisAccount)
 	fmt.Println("ICO", bl)
 	fmt.Println("------------------------------------------------------------")
-	bl1, _ := sim.RPC.API_GetBalance(acc1)
+	bl1, _ := sim.RPC.API_GetBalance(account1)
 	fmt.Println("ACC1", bl1)
 
 	fmt.Println("------------------------------------------------------------")
-	result4, err := sim.RPC.API_GetPDEState(float64(sim.GetBlockchain().GetBeaconBestState().BeaconHeight))
+	result3, err := sim.RPC.API_GetPDEState(float64(sim.GetBlockchain().GetBeaconBestState().BeaconHeight))
 	if err != nil {
 		panic(err)
 	}
-	rBytes2, _ := json.Marshal(result4)
+	rBytes2, _ := json.Marshal(result3)
 	fmt.Println(string(rBytes2))
 }
 ```

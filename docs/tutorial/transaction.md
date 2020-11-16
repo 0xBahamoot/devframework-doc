@@ -10,9 +10,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"incognito-dev-framework"
-	"incognito-dev-framework/account"
-	"incognito-dev-framework/rpcclient"
+	"github.com/0xkumi/incongito-dev-framework"
+	"github.com/0xkumi/incongito-dev-framework/account"
+	"github.com/0xkumi/incongito-dev-framework/rpcclient"
 	"github.com/incognitochain/incognito-chain/blockchain"
 	"github.com/incognitochain/incognito-chain/common"
 	"github.com/incognitochain/incognito-chain/transaction"
