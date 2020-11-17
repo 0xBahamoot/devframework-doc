@@ -17,7 +17,7 @@ if err!=nil{
 ## Disable Log
 
 ```go
-devframework.DisableLog(true)
+sim.DisableLog(true)
 ```
 
 ---
