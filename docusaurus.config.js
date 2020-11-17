@@ -8,12 +8,15 @@ module.exports = {
   organizationName: 'incognito', // Usually your GitHub org/user name.
   projectName: 'incognito-devframework-docs', // Usually your repo name.
   themeConfig: {
+    disableSwitch: true,
+    defaultMode: 'dark',
     hideableSidebar: true,
     navbar: {
       title: 'DevFramework',
       logo: {
         alt: 'Logo',
         src: 'img/logo.png',
+        srcDark: 'img/logo_dark.png', 
       },
       items: [
         {
