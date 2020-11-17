@@ -1,12 +1,13 @@
 ---
 id: vs
-title: Simulation vs Remote Client
-sidebar_label: Simulation vs Remote-Client
+title: Modes
+sidebar_label: Modes
 ---
 
-### The Incognito Devframework has 2 modes:
+### The Incognito Devframework has 3 modes:
 
-**Simulation**: create a full local environment Incognito Blockchain node with user's configuration. User can use both Simulation's functionalities and RPC's functionalities.
+**Simulation**: create a full simluated local environment Incognito Blockchain node with user's configuration. Available APIs: SIM, APP and RPC.
 
-**Remote-Client**: create local client that can interact with a remote Incognito Blockchain node with code. User can only use RPC's functionalities.
+**App-node**: create a Incognito Blockchain full-node that can connect with existing Incognito Mainnet/Testnet or user private Incognito Blockchain network. Available APIs: APP, RPC.
 
+**Remote-Client**: create local cliWent that can interact with a remote Incognito Blockchain node with code. Available APIs: RPC.
