@@ -3,13 +3,14 @@ id: tut-pde
 title: Tutorial PDE
 sidebar_label: PDE
 ---
+
 ```go
 package main
 
 import (
 	"encoding/json"
 	"fmt"
-	devframework "incognito-dev-framework"
+	"github.com/incognitochain/incognito-chain/devframework"
 )
 
 func main() {
