@@ -33,8 +33,8 @@ sim := devframework.NewStandaloneSimulation("sim", devframework.Config{
 
 ## New App Node
 
-```go
-node := devframework.NewAppNode("appnode", devframework.MODE_MAINNET, nil, "51.91.72.45:9330", true)
+```go title="Example: start an app node with Mainnet's param"
+node := devframework.NewAppNode("fullnode", devframework.MainNetParam, true)
 ```
 
 ---
@@ -42,5 +42,5 @@ node := devframework.NewAppNode("appnode", devframework.MODE_MAINNET, nil, "51.9
 ## New Remote Client Node
 
 ```go
-remote := devframework.NewRPCClient("0.0.0.0:8000")
+remote := devframework.NewRPCClient("1.2.3.4:8000")
 ```

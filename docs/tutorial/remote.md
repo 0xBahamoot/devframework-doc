@@ -8,7 +8,7 @@ sidebar_label: Remote Client
 package main
 
 import (
-    "github.com/incognitochain/incognito-chain/devframework"
+    "github.com/0xkumi/incongito-dev-framework"
 )
 func main() {
     remote := devframework.NewRPCClient("23.234.324.2:8000")
