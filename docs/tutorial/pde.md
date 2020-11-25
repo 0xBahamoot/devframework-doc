@@ -18,6 +18,7 @@ func main() {
 	sim := devframework.NewStandaloneSimulation("sim", devframework.Config{
 		ShardNumber: 2,
 	})
+	// generate 2nd block after genesis block
 	sim.GenerateBlock().NextRound()
 
 	// send 100000000 PRV from genesis account to account1
