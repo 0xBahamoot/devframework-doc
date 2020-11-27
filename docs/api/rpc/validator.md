@@ -1,6 +1,6 @@
 ---
-id: staking
-title: Staking
+id: validator
+title: Validator
 ---
 
 ## Committee PublicKey State
@@ -114,6 +114,30 @@ unstake1 := rpcclient.StopStakingParam{
     MinerPrk:  account1.PrivateKey,
 }
 result, err := rpc.API_SendTxStopAutoStake(unstake1)
+if err != nil {
+    return err
+}
+```
+
+## Committee List
+
+### Get committee list
+
+API_GetCommitteeList() (\*jsonresult.CommitteeListsResult, error)
+
+```go title="Example: get committee list"
+result, err = rpc.API_GetCommitteeList()
+if err != nil {
+    return err
+}
+```
+
+### Get candidate list
+
+API_GetCandidateList() (\*jsonresult.CandidateListsResult, error)
+
+```go title="Example: get candidate list"
+result, err = rpc.API_GetCandidateList()
 if err != nil {
     return err
 }

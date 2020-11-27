@@ -4,6 +4,10 @@ title: Privacy Decentralized Exchange
 sidebar_label: PDE
 ---
 
+:::note
+See [here](https://github.com/incognitochain/incognito-chain/wiki/Spec-:-pDEX-The-first-privacy-protecting-decentralized-exchange) for more information about how pDEX works.
+:::
+
 ## PDE state
 
 API_GetPDEState(beaconHeight float64) (jsonresult.CurrentPDEState, error)

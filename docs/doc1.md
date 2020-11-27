@@ -14,3 +14,9 @@ slug: /
 ```go
 go get -v github.com/0xkumi/incongito-dev-framework
 ```
+
+3. Using local development code: (Optional)
+
+```go title="Add this line at the end of file in devframework go.mod file"
+replace github.com/incognitochain/incognito-chain => "LINK TO YOUR LOCAL INCOGNITO-CHAIN DEVELOPMENT REPO"
+```

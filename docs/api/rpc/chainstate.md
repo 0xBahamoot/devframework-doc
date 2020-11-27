@@ -3,6 +3,17 @@ id: chainstate
 title: Chain State
 ---
 
+## Blockchain Info
+
+API_GetBlockChainInfo() (\*jsonresult.GetBlockChainInfoResult, error)
+
+```go title="Example: get blockchain info"
+result,err := rpc.API_GetBlockChainInfo()
+if err!=nil {
+    return err
+}
+```
+
 ## Beacon BestState
 
 API_GetBeaconBestState() (jsonresult.GetBeaconBestState, error)
