@@ -10,7 +10,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/0xkumi/incongito-dev-framework"
+	"github.com/0xkumi/incognito-dev-framework"
 )
 
 func main() {

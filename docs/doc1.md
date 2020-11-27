@@ -12,7 +12,7 @@ slug: /
 2. Run go get:
 
 ```go
-go get -v github.com/0xkumi/incongito-dev-framework
+go get -v github.com/0xkumi/incognito-dev-framework
 ```
 
 3. Using local development code: (Optional)

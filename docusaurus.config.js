@@ -55,7 +55,7 @@ module.exports = {
             },
             {
               label: 'Devframework GitHub',
-              href: 'https://github.com/0xkumi/incongito-dev-framework',
+              href: 'https://github.com/0xkumi/incognito-dev-framework',
             },
           ],
         },
