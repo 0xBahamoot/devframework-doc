@@ -27,7 +27,9 @@ API_CreateAndSendTxWithPDEFeeWithdrawalReq(privateKey string, receivers map[stri
 
 --- -->
 
-## pToken Trade Request
+## Trade Request
+
+### pToken Trade Request
 
 API_SendTxWithPTokenTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}, p1 string, pPrivacy float64) (jsonresult.CreateTransactionTokenResult, error)
 
@@ -38,9 +40,22 @@ if err!=nil {
 }
 ```
 
+### PRV Trade Request
+
+API_SendTxWithPRVTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
+
+```go
+beststate, err := rpc.API_SendTxWithPRVTradeReq()
+if err!=nil {
+    return err
+}
+```
+
 ---
 
-## pToken Cross-pool Trade Request
+## Cross-pool Trade Request
+
+### pToken Cross-pool Trade Request
 
 API_SendTxWithPTokenCrossPoolTradeReq(acount account.Account, tokenID string, buyTokenID string, amount string) (\*jsonresult.CreateTransactionTokenResult, error)
 
@@ -55,22 +70,7 @@ if err!=nil {
 }
 ```
 
----
-
-## PRV Trade Request
-
-API_SendTxWithPRVTradeReq(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
-
-```go
-beststate, err := rpc.API_SendTxWithPRVTradeReq()
-if err!=nil {
-    return err
-}
-```
-
----
-
-## PRV Cross-pool Trade Request
+### PRV Cross-pool Trade Request
 
 API_SendTxWithPRVCrossPoolTradeReq(account account.Account, buyTokenID string, amount string) (\*jsonresult.CreateTransactionResult, error)
 
@@ -86,7 +86,9 @@ if err!=nil {
 
 ---
 
-## pToken Contribution
+## Contribution
+
+### pToken Contribution
 
 API_SendTxWithPTokenContributionV2(account account.Account, tokenID string, tokenAmount string, pairID string) (\*jsonresult.CreateTransactionTokenResult, error)
 
@@ -101,9 +103,7 @@ if err!=nil {
 }
 ```
 
----
-
-## PRV Contribution
+### PRV Contribution
 
 API_SendTxWithPRVContributionV2(account account.Account, prvAmount string, pairID string) (\*jsonresult.CreateTransactionResult, error)
 
@@ -117,9 +117,7 @@ if err!=nil {
 }
 ```
 
-## <!-- TODO -->
-
-### Withdraw Liquidity
+## Withdraw Liquidity
 
 API_SendTxWithWithdrawalReqV2(privateKey string, receivers map[string]interface{}, fee float64, privacy float64, reqInfo map[string]interface{}) (jsonresult.CreateTransactionResult, error)
 
