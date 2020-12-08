@@ -34,7 +34,17 @@ sim := devframework.NewStandaloneSimulation("sim", devframework.Config{
 ## New App Node
 
 ```go title="Example: start an app node with Mainnet's param"
-node := devframework.NewAppNode("fullnode", devframework.MainNetParam, true)
+node := devframework.NewAppNode("fullnode", devframework.MainNetParam, false, true)
+```
+
+---
+
+## New Light Node
+
+Light node will sync shard block and store it only not process it.
+
+```go title="Example: create a light node"
+node := devframework.NewAppNode("lightnode", devframework.MainNetParam, true, true)
 ```
 
 ---
